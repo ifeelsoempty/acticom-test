@@ -1,4 +1,4 @@
-# acticom-test
+# Test task for Acticom
 
 ## Build Setup
 
