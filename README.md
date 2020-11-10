@@ -3,7 +3,7 @@ SSR Application со страницами статей и пагинацией, 
 
 Данные берутся из [API новостей](http://newsapi.org).
 
-Использован стек: Vue, Vuex, Nuxt.js, Axios.
+Использован стек: Vue, Vuex, Nuxt.js, Axios, SCSS.
 
 ## Build Setup
 
