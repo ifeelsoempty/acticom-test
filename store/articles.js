@@ -4,6 +4,11 @@ export const state = () => ({
 
 export const mutations = {
   setArticles(state, articles) {
+    articles.map((article, index) => {
+      if(!article.urlToImage){
+        article.id = index + 1;
+      }
+    })
     state.articles = articles
   }
 }
@@ -25,11 +30,16 @@ export const actions = {
 
 export const getters = {
   articles: s => s.articles,
+  articleById: s => {
+    return (id) => {
+      return s.articles.filter(article => article.id == id)[0];
+    }
+  },
   articlesPage: (s) => {
     return (currentPage, perPage) => {
       const startIndex = (perPage * currentPage) - (perPage - 1);
       const endIndex = perPage * currentPage
-      return s.articles.filter((item, index) => {
+      return s.articles.filter((article, index) => {
         index++
         return index >= startIndex && index <= endIndex 
       })

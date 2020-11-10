@@ -21,6 +21,6 @@ export default {
 
 <style lang="scss">
   .container{
-    width: 1200px;
+    min-width: 1000px;
   }
 </style>

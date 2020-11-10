@@ -2,9 +2,8 @@
   <div class="popup_wrapper" ref="popup_wrapper">
     <div class="v-popup">
       <div class="v-popup__header">
-        <span>Form</span>
-        <span @click="closePopup">
-          x
+        <span class="v-popup-close" @click="closePopup">
+          &#10006;
         </span>
       </div>
       <div class="v-popup__content">
@@ -42,29 +41,36 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
     background: rgba(64,64,64, .4);
     position: absolute;
     right: 0;
     left: 0;
-    top: 0;
     bottom: 0;
+    top: 0;
   }
   .v-popup {
-    padding: 16px;
+    padding: 35px;
+    border-radius: $border-radius;
     position: fixed;
-    top: 50px;
     width: 400px;
+    top: 100px;
     background: #ffffff;
-    box-shadow: 0 0 17px 0 #e7e7e7;
+    box-shadow: $block-shadow;
+    &-close{
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      color: $red;
+      cursor: pointer;
+      &:hover{
+        color: darken($red, 15%);
+      }
+    }
     &__header, &__footer{
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-    .submit-btn {
-      padding: 8px;
-      color: #ffffff;
-      background: #26ae68;
     }
   }
 </style>

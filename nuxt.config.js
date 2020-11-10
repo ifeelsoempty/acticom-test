@@ -28,12 +28,18 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxt/content',
+    '@nuxtjs/style-resources',
   ],
 
   axios: {},
 
   content: {},
 
-  build: {
+  build: {},
+
+  styleResources: {
+    scss: [
+        '@/assets/scss/variables.scss',
+    ]
   }
 }

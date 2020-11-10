@@ -3,9 +3,15 @@
     <transition name="fade">
       <Popup v-if="isFormPopupVisible" @closePopup="closeFormPopup">
         <form @submit.prevent="submitForm" class="subscribe-form">
-          <input required v-model="name" class="form-name" placeholder="Enter your name" type="name">
-          <input required v-model="email" class="form-email" placeholder="Enter your email" type="email">
-          <input required v-model="phone" class="form-phone" placeholder="Enter your phone" type="phone">
+          <label>Your name:
+            <input required v-model="name" class="subscribe-form-name" placeholder="Name" type="name">
+          </label>
+          <label>Your email:
+            <input required v-model="email" class="subscribe-form-email" placeholder="Email" type="email">
+          </label>
+          <label>Your phone:
+            <input required v-model="phone" class="subscribe-form-phone" placeholder="Phone" type="phone">
+          </label>
           <button class="submit_btn">Submit</button>
         </form>
       </Popup>
@@ -75,7 +81,9 @@
     align-items: center;
     flex-direction: column;
     &-title{
-      font-size: 5rem;
+      font-size: 8rem;
+      font-weight: 100;
+      letter-spacing: $letter-spacing;
       opacity: 0.5;
     }
     &-info{
@@ -84,14 +92,70 @@
       font-size: 1.2rem;
     }
     &-button{
-      font-size: 1.2rem;
-      border-radius: 10px;
+      display: flex;
+      margin-top: 20px;
+      border: none;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-decoration: none;
+      width: 200px;
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing;
+      height: 50px;
+      border-radius: 50px;
+      background: $base-color;
+      box-shadow: $block-shadow;
+      transition: 0.3s;
+      &:hover{
+        border: 0;
+        background: $light-color;
+      }
+      &:focus{
+        outline: 0;
+        background: $dark-color;
+      }
     }
     &-form{
       display: flex;
       justify-content: center;
-      align-items: center;
       flex-direction: column;
+      input{
+        width: 100%;
+        border: 0;
+        padding: 5px;
+        border-bottom: 1px solid rgba(0, 0, 0, .3);
+        &:focus{
+          outline: 0;
+          border-bottom: 1px solid $base-color;
+        }
+      }
+      button{
+          display: flex;
+          margin-top: 20px;
+          border: none;
+          justify-content: center;
+          align-items: center;
+          margin: 0 auto;
+          margin-top: 25px;
+          color: #fff;
+          text-decoration: none;
+          width: 150px;
+          text-transform: uppercase;
+          letter-spacing: $letter-spacing;
+          height: 45px;
+          border-radius: 25px;
+          background: $green;
+          transition: 0.3s;
+          &:hover{
+            border: 0;
+            background: lighten($green, 5%);
+          }
+          &:focus{
+            outline: 0;
+            background: darken($green, 5%);
+          }
+      }
     }
   }
 </style>

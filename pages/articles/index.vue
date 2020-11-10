@@ -3,26 +3,27 @@
     <div class="articles">
       <div @click.prevent="openArticle(article.id)" class="article" v-for="article of articles" :key="article.id">
         <div class="article-image">
-          <img :src="article.urlToImage">
+          <img v-if="article.urlToImage" :src="article.urlToImage">
+          <img v-else src="~/assets/images/no-image.png">
         </div>
-        <h5>{{ article.title }}</h5>
+        <h5 class="article-title">{{ article.title }}</h5>
       </div>
     </div>
     <div class="pagination">
       <div class="page-button" v-bind:class="{ disable: isPageFirst }" @click.prevent="openFirstPage()">
-        <<
+        &lt;&lt;
       </div>
       <div class="page-button" v-bind:class="{ disable: isPageFirst }" @click.prevent="openPrevPage()">
-        <
+        &lt;
       </div>
       <div class="page-button current-page">
         {{ currentPage }}
       </div>
       <div class="page-button" v-bind:class="{ disable: isPageLast }" @click.prevent="openNextPage()">
-        >
+        &gt;
       </div>
-       <div class="page-button" v-bind:class="{ disable: isPageLast }" @click.prevent="openLastPage()">
-        >>
+      <div class="page-button" v-bind:class="{ disable: isPageLast }" @click.prevent="openLastPage()">
+        &gt;&gt;
       </div>
     </div>
   </section>
@@ -34,7 +35,7 @@ export default {
     if(store.getters['articles/articles'].length === 0 ){
       await store.dispatch('articles/fetch');
     }
-      store.dispatch('paginationCount/increaseCounter');
+    store.dispatch('paginationCount/increaseCounter');
   },
   data() {
     return{
@@ -59,7 +60,7 @@ export default {
     },
     isPageLast(){
       return this.currentPage === this.lastPage
-    }
+    },
   },
   methods: {
     openArticle(id) {
@@ -95,7 +96,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .articles{
     display: flex;
     justify-content: center;
@@ -109,33 +110,37 @@ export default {
     height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    padding: 20px;
     text-align: center;
     align-items: center;
-    padding: 20px;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.377);
     transition: .5s;
+    border-radius: 15px;
+    overflow: hidden;
   }
 
   .article:hover{
     cursor: pointer;
-    position: relative;
     transform: scale(1.02);
   }
 
   .article-image{
     width: 100%;
-    max-height: 65%;
+    height: 70%;
     overflow: hidden;
+    border-radius: 15px;
+    & img{
+      height: 100%;
+    }
   }
-  .article-image img{
-    width: 100%;
-    height: auto;
+
+  .article-title{
+    margin-top: 8%;
   }
 
   .pagination{
     display: flex;
-    margin-top: 30px;
+    margin-top: 50px;
     justify-content: center;
     align-items: center;
     column-gap: 20px;
@@ -148,7 +153,8 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #444;
+    border: 2px solid $base-color;
+    color: $base-color;
     font-size: 1.5rem;
     border-radius: 50%;
     opacity: 0.5;
@@ -160,8 +166,9 @@ export default {
   }
 
   .current-page{
-    background: #444;
+    background: $base-color;
     color: #fff;
+    border: 0;
   }
 
   .current-page:hover{
