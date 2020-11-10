@@ -60,6 +60,7 @@
     &-info{
       position: absolute;
       width: 100%;
+      min-width: 300px;
       top: -30px;
       color: $grey;
       font-weight: 100;
