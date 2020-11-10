@@ -27,7 +27,7 @@ export default {
     },
     mounted() {
       let vm = this;
-      document.addEventListener('click', (e) => {
+      document.addEventListener('mousedown', (e) => {
         if(e.target === vm.$refs['popup_wrapper']){
           vm.closePopup();
         }

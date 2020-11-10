@@ -96,7 +96,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
   .articles{
     display: flex;
     justify-content: center;
@@ -117,25 +117,22 @@ export default {
     transition: .5s;
     border-radius: 15px;
     overflow: hidden;
-  }
-
-  .article:hover{
-    cursor: pointer;
-    transform: scale(1.02);
-  }
-
-  .article-image{
-    width: 100%;
-    height: 70%;
-    overflow: hidden;
-    border-radius: 15px;
-    & img{
-      height: 100%;
+    &:hover{
+      cursor: pointer;
+      transform: scale(1.02);
     }
-  }
-
-  .article-title{
-    margin-top: 8%;
+    &-image{
+      width: 100%;
+      height: 70%;
+      overflow: hidden;
+      border-radius: 15px;
+      & img{
+        height: 100%;
+      }
+    }
+    &-title{
+      margin-top: 8%;
+    }
   }
 
   .pagination{
@@ -155,32 +152,30 @@ export default {
     align-items: center;
     border: 2px solid $base-color;
     color: $base-color;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     border-radius: 50%;
     opacity: 0.5;
-  }
-
-  .page-button:hover{
-    cursor: pointer;
-    opacity: 0.3;
+    &:hover{
+      cursor: pointer;
+      opacity: 0.3;
+    }
   }
 
   .current-page{
     background: $base-color;
     color: #fff;
     border: 0;
-  }
-
-  .current-page:hover{
-    cursor: default;
-    opacity: 0.5;
+    &:hover{
+      cursor: default;
+      opacity: 0.5;
+    }
   }
 
   .disable{
     opacity: 0.2;
-  }
-  .disable:hover{
-    opacity: 0.2;
-    cursor: default;
+    &:hover{
+      opacity: 0.2;
+      cursor: default;
+    }
   }
 </style>

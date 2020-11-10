@@ -20,6 +20,9 @@ export default {
 </script>
 
 <style lang="scss">
+  .navbar-brand{
+    color: $light-color !important;
+  }
   .container{
     min-width: 1000px;
   }

@@ -3,8 +3,8 @@
     <div v-if="article.urlToImage" class="article-image">
       <img class="article-image" :src="article.urlToImage" alt="">
       <div class="article-info">
-        <span v-if="article.publishedAt" class="article-publishedAt"> {{ publishedAt }} </span>
         <span v-if="article.author" class="article-author">Author: {{ article.author }} </span>
+        <span v-if="article.publishedAt" class="article-publishedAt"> {{ publishedAt }} </span>
       </div>
     </div>
     <h1 class="article-title">{{ article.title }}</h1>
@@ -65,7 +65,7 @@
       font-weight: 100;
       letter-spacing: $letter-spacing;
     }
-    &-author{
+    &-publishedAt{
       position: absolute;
       right: 0;
     }

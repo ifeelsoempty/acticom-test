@@ -5,7 +5,7 @@
   </section>
 </template>
 
-<style>
+<style lang="scss">
   .error{
     display: flex;
     flex-direction: column;
@@ -13,9 +13,8 @@
     text-align: center;
     color: #000;
     opacity: 0.2;
-  }
-
-  .error-404{
-    font-size: 10rem;
+    &-404{
+      font-size: 12rem;
+    }
   }
 </style>

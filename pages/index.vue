@@ -83,12 +83,14 @@
     &-title{
       font-size: 8rem;
       font-weight: 100;
+      color: $light-color; 
       letter-spacing: $letter-spacing;
-      opacity: 0.5;
     }
     &-info{
       max-width: 600px;
       text-align: center;
+      letter-spacing: $letter-spacing;
+      color: $grey;
       font-size: 1.2rem;
     }
     &-button{
