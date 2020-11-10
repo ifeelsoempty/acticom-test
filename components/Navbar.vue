@@ -7,7 +7,7 @@
           <NuxtLink exact no-prefetch active-class="active" class="nav-link" to="/">Main</NuxtLink>
         </li>
         <li class="nav-item">
-          <NuxtLink no-prefetch active-class="active" class="nav-link" to="/articles">Articles</NuxtLink>
+          <NuxtLink no-prefetch active-class="active" class="nav-link" to="/articles?page=1">Articles</NuxtLink>
         </li>
       </ul>
     </div>
