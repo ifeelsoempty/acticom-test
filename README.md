@@ -1,4 +1,7 @@
-# Test task for Akticom
+# Тестовое задания для Akticom
+SSR Application со страницами статей и пагинацией, переключение пагинации отслеживается и выводится при отправке формы в popup на главной странице.
+# Данные берутся из [API новостей](http://newsapi.org)
+## Использован стек: Vue, Vuex, Nuxt.js, Axios
 
 ## Build Setup
 
