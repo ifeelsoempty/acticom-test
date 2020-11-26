@@ -1,5 +1,12 @@
-# vue-test
+# Тестовое задание для Akticom
+SSR Application со страницами статей и пагинацией, переключения пагинации и переходы 
+на страницу статей отслеживаются и их счетчик выводится при отправке формы в popup на главной странице.
 
+Данные берутся из [API новостей](http://newsapi.org).
+
+Использован стек: Vue, Vuex, Nuxt.js, Axios, SCSS.
+
+Сайт: https://akticom-test.herokuapp.com/
 ## Build Setup
 
 ```bash
