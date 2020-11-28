@@ -12,17 +12,16 @@ import Header from '../components/Header'
 
 export default {
   components: {
-    Header
+    Header,
   },
   data: () => {
-    return {
-    }
-  }
+    return {}
+  },
 }
 </script>
 
 <style>
-.container{
+.container {
   max-width: 1200px;
 }
 </style>

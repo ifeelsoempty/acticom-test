@@ -5,16 +5,13 @@
 </template>
 
 <script>
-
 import NewsBlock from '../components/NewsBlock'
 
 export default {
   components: {
-    NewsBlock
-  }
+    NewsBlock,
+  },
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
