@@ -1,0 +1,28 @@
+.header{
+  height: 65px;
+  background: $header-color-bg;
+  box-shadow: 0 0 10px $header-color-shadow;
+}
+
+.header-container{
+  height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header-nav{
+  display: flex;
+  height: 100%;
+  &__link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100px;
+    transition: box-shadow .35s;
+    color: $header-color-link;
+    &:hover{
+      box-shadow: 0 0 10px inset $header-color-link-hover;
+    }
+  }
+}

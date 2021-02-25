@@ -1,9 +1,7 @@
 <template>
   <div>
     <Header />
-    <div class="container">
-      <Nuxt />
-    </div>
+    <Nuxt />
   </div>
 </template>
 
@@ -14,14 +12,7 @@ export default {
   components: {
     Header,
   },
-  data: () => {
-    return {}
-  },
 }
 </script>
 
-<style>
-.container {
-  max-width: 1200px;
-}
-</style>
+<style></style>
