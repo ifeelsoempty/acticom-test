@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <NewsBlock :news-list="Array.isArray(newsList) ? newsList : []" />
+    <div v-if="loadingState">Loading...</div>
+    <NewsBlock v-else :news-list="Array.isArray(newsList) ? newsList : []" />
   </div>
 </template>
 
@@ -12,11 +13,21 @@ export default {
   components: {
     NewsBlock,
   },
+  data() {
+    return {
+      loadingState: false,
+    }
+  },
   computed: {
     ...mapGetters('news', ['newsList']),
   },
   async created() {
+    if (!Array.isArray(this.newsList)) {
+      this.loadingState = true
+    }
     await this.getNewsList()
+
+    this.loadingState = false
   },
   methods: {
     ...mapActions('news', ['getNewsList']),
