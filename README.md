@@ -7,9 +7,9 @@ SSR Application со страницами статей и пагинацией, 
 Использован стек: Vue, Vuex, Nuxt.js, Axios, SCSS.
 
 Сайт: https://akticom-test.herokuapp.com/
+
 ## Build Setup
 
-```bash
 # install dependencies
 $ npm install
 
